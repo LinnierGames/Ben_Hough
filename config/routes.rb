@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :faqs
   # get 'homepage/index'
 
   resources :blog_comments
