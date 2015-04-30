@@ -34,8 +34,7 @@ body {
 
 } #navBar ul {
     list-style-type: none;
-    padding: 0px;
-    margin: 0px;
+    padding: 25px;
 
 } #navBar ul li {
     background-repeat: no-repeat;
