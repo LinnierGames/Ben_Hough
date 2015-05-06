@@ -1,0 +1,52 @@
+<style type="text/css">
+	 #tableMyRecentBlogs {
+	 	margin-left: 24px;
+		width: auto;
+		background-color: white;
+
+	} #tableMyRecentBlogs table, th, td {
+	    border: 1px solid black;
+	    border-collapse: collapse;
+
+	} #tableMyRecentBlogs th, td {
+		text-align: left;
+	    padding: 6px 12px;
+	} #tableMyRecentBlogs td a {
+		padding: 6px;
+		
+	}
+
+</style>
+<h1>My Most Recent Blogs</h1>
+<table id="tableMyRecentBlogs">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Comment Count</th>
+      <th>Unread Comments</th>
+      <th colspan="3">options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+	<% if @myRecentBlogs.count > 0 %>
+		<% @myRecentBlogs.each do |blog| %>
+	      <tr>
+	        <td style="width: 124px;"><%= blog.title %></td>
+	        <td><%= blog.body %></td>
+	        <td>0</td>
+	        <td>zero</td>
+	        <td><%= link_to 'Show', blog %></td>
+	        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+	        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	    <% end %>
+	<%else%>
+		<tr>
+			<td colspan="7">no blogs</td>
+		</tr>
+	<% end %>
+  </tbody>
+</table>
+
