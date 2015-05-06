@@ -14,12 +14,7 @@
  *= require_self
  */
 
-body {
-	background-color: green;
-	padding: 6px 24px;
-	margin: 0 0px;
-
-} header {
+header {
 	width: auto;
 	height: 102px;
 	margin: 48px -24px;
@@ -56,5 +51,20 @@ body {
 
 } #navBar ul li.button a {
 	background-color: black;
+
+} body {
+	background-color: green;
+	padding: 6px 24px;
+	margin: 0 0px;
+
+} #title {
+	color: black;
+
+} h1 {
+	color: white;
+
+} h1 a:visited, a:active {
+	text-decoration:none;
+	color: white;
 
 }

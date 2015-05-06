@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+  get 'blogs/index'
+  end
+
   get 'admin/index'
 
   # get 'homepage/index'

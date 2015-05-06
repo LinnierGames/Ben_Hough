@@ -1,23 +1,21 @@
 <style type="text/css">
-	 #tableMyRecentBlogs {
+ 	table, th, td {
 	 	margin-left: 24px;
 		width: auto;
 		background-color: white;
-
-	} #tableMyRecentBlogs table, th, td {
 	    border: 1px solid black;
 	    border-collapse: collapse;
 
-	} #tableMyRecentBlogs th, td {
+	} table th, td {
 		text-align: left;
 	    padding: 6px 12px;
-	} #tableMyRecentBlogs td a {
+	} table td a {
 		padding: 6px;
-		
+
 	}
 
 </style>
-<h1>My Most Recent Blogs</h1>
+<h1><a href="blogs/index.html">My Most Recent Blogs</a></h1>
 <table id="tableMyRecentBlogs">
   <thead>
     <tr>
@@ -33,7 +31,7 @@
 	<% if @myRecentBlogs.count > 0 %>
 		<% @myRecentBlogs.each do |blog| %>
 	      <tr>
-	        <td style="width: 124px;"><%= blog.title %></td>
+	        <td><%= blog.title %></td>
 	        <td><%= blog.body %></td>
 	        <td>0</td>
 	        <td>zero</td>
@@ -45,6 +43,37 @@
 	<%else%>
 		<tr>
 			<td colspan="7">no blogs</td>
+		</tr>
+	<% end %>
+  </tbody>
+</table>
+<h1><a href="blogs/index.html">My Unasnwered Questions</a></h1>
+<table id="tableMyA">
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Tile Elapsed</th>
+      <th>Action</th>
+      <th colspan="3">options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+	<% if @myUnasnweredQuestions.count > 0 %>
+		<% @myUnasnweredQuestions.each do |question| %>
+	      <tr>
+	        <td><%= question.title %></td>
+	        <td><%= question.body %></td>
+	        <td>0</td>
+	        <td>zero</td>
+	        <td><%= link_to 'Show', question %></td>
+	        <td><%= link_to 'Edit', edit_faq_path(question) %></td>
+	        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	    <% end %>
+	<%else%>
+		<tr>
+			<td colspan="7">all questions answered</td>
 		</tr>
 	<% end %>
   </tbody>
