@@ -7,19 +7,16 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-		<header>
-			<img style="position: absolute; margin: -48px 0 0 164px; z-index: 1;" src="RES/gameImage.png" width="96" height="96">
-			<div id="navBar" style="position: absolute; z-index: 2;">
-				<h1>Survival</h1>
-				<ul>
-					<li class=button style="background-image: url(RES/navIcon-home.png);"><a href="/">Home</a></li>
-					<li class=button style="background-image: url(RES/navIcon-users.png);"><a href="blogs.html">Blogs</a></li>
-					<li class=button style="background-image: url(RES/navIcon-search.png);"><a href="faqs.html">FAQs</a></li>
-				</ul>
-			</div>
-		</header>
-		
-		<%= yield %>
+		<div class="container">
+			<ul class="nav nav-tabs">
+				<li class=button style="background-image: url(RES/navIcon-home.png);"><a href="/">Home</a></li>
+				<li class=button style="background-image: url(RES/navIcon-users.png);"><a href="blogs.html">Blogs</a></li>
+				<li class=button style="background-image: url(RES/navIcon-search.png);"><a href="faqs.html">FAQs</a></li>
+			</ul>
+			
+			<%= yield %>
+
+		</div>
 
 	</body>
 </html>
