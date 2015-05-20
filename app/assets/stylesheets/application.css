@@ -15,7 +15,9 @@
  */
 
 body {
-	background-color: green;
+	background-image: url( "texture-blueprint");
+    background-repeat: repeat;
+    background-position: left top;
 	padding: 6px 10px;
 	margin: 0 0px;
 
