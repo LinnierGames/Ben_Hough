@@ -45,7 +45,8 @@
 	    <% end %>
 	<%else%>
 		<tr>
-			<td colspan="7">no blogs</td>
+			<td colspan="4">no blogs</td>
+			<td colspan="3"><%= link_to 'Add New Blog', new_blog_path %></td>
 		</tr>
 	<% end %>
   </tbody>
