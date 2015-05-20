@@ -8,13 +8,84 @@
 	</head>
 	<body>
 		<div class="container">
-			<ul class="nav nav-tabs">
-				<li class=button style="background-image: url(RES/navIcon-home.png);"><a href="/">Home</a></li>
-				<li class=button style="background-image: url(RES/navIcon-users.png);"><%= link_to 'Blogs', blogs_path %></li>
-				<li class=button style="background-image: url(RES/navIcon-search.png);"><%= link_to 'FAQs', faqs_path %></li>
-			</ul>
-			
+<!-- header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        	<%= link_to "Administrator's Site", admin_index_path, class: "navbar-brand" %>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- /container -->
+</div>
+<!-- /Header -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- Left column -->
+
+            <strong><i class="glyphicon glyphicon-link"></i> Resources</strong>
+
+            <hr>
+
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-header">Managing the Database</li>
+                <li><%= link_to 'Blogs', blogs_path %></li>
+                <li><%= link_to 'Blog Comments', blog_comments_path %></li>
+                <li><%= link_to 'FAQs', faqs_path %></li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-header">Add New</li>
+                <li><%= link_to 'Blog', new_blog_path %></li>
+                <li><%= link_to 'Blog Comment', new_blog_comment_path %></li>
+                <li><%= link_to 'FAQ', new_faq_path %></li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-header">Website</li>
+                <li><%= link_to 'Visit Homepage', root_path %></li>
+                <li><%= link_to 'Visit on Github', root_path %></li>
+                <li><%= link_to 'Take down Site', root_path %></li>
+            </ul>
+
+        </div>
+        <div class="col-sm-9">
+
+            <strong><i class="glyphicon glyphicon-link"></i> Yield</strong>
+
+            <hr>
+
 			<%= yield %>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="answerQuestion" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4>Answer Question</h4>
+			</div>
+			<div class="modal-body">
+				<h5>Question:</h5>
+					<p><%= %></p>
+				<h5>Enter Answer:</h5>
+				  <div class="input-group col-lg-3">
+				  	<ipnut type="text" class="form-control" placeholder="answer here">
+				  </div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn" data-dismiss="modal">cancel</a>
+				<a class="btn btn-primary" data-dismiss="modal">save</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 		</div>
 
