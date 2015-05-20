@@ -1,71 +1,71 @@
 <div class="panel panel-default">
-				<div class="panel-heading">
-					<h3>My Recent Blogs</h3><span><%= link_to 'New Blog', new_blog_path %></span>
-				</div>
-				<table id="tableMyRecentBlogs" class="table table-stripped">
-				  <thead>
-				    <tr>
-				      <th>Title</th>
-				      <th>Body</th>
-				      <th>Comment Count</th>
-				      <th>Unread Comments</th>
-				      <th colspan="3">options</th>
-				    </tr>
-				  </thead>
+	<div class="panel-heading">
+		<h3>My Recent Blogs</h3><span><%= link_to 'New Blog', new_blog_path %></span>
+	</div>
+	<table id="tableMyRecentBlogs" class="table table-stripped">
+	  <thead>
+	    <tr>
+	      <th>Title</th>
+	      <th>Body</th>
+	      <th>Comment Count</th>
+	      <th>Unread Comments</th>
+	      <th colspan="3">options</th>
+	    </tr>
+	  </thead>
 
-				  <tbody>
-					<% if @myRecentBlogs.count > 0 %>
-						<% @myRecentBlogs.each do |blog| %>
-					      <tr>
-					        <td><%= blog.title %></td>
-					        <td><%= "body" %></td>
-					        <td>0</td>
-					        <td>zero</td>
-					        <td><%= link_to 'Show', blog_path(blog), class: 'btn btn-mini btn-primary' %></td>
-					        <td><%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-mini btn-success' %></td>
-					        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %></td>
-					      </tr>
-					    <% end %>
-					<%else%>
-						<tr>
-							<td colspan="4">no blogs</td>
-							<td colspan="3"><%= link_to 'Add New Blog', new_blog_path %></td>
-						</tr>
-					<% end %>
-				  </tbody>
-				</table>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3>My Unanswered Questions</h3><span><%= link_to 'View All', faqs_path %></span>
-				</div>
-				<table id="tableMyA" class="table table-stripped">
-				  <thead>
-				    <tr>
-				      <th>Question</th>
-				      <th>Time Elapsed</th>
-				      <th>Action</th>
-				      <th colspan="3">options</th>
-				    </tr>
-				  </thead>
+	  <tbody>
+		<% if @myRecentBlogs.count > 0 %>
+			<% @myRecentBlogs.each do |blog| %>
+		      <tr>
+		        <td><%= blog.title %></td>
+		        <td><%= "body" %></td>
+		        <td>0</td>
+		        <td>zero</td>
+		        <td><%= link_to 'Show', blog_path(blog), class: 'btn btn-mini btn-primary' %></td>
+		        <td><%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-mini btn-success' %></td>
+		        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %></td>
+		      </tr>
+		    <% end %>
+		<%else%>
+			<tr>
+				<td colspan="4">no blogs</td>
+				<td colspan="3"><%= link_to 'Add New Blog', new_blog_path %></td>
+			</tr>
+		<% end %>
+	  </tbody>
+	</table>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3>My Unanswered Questions</h3><span><%= link_to 'View All', faqs_path %></span>
+	</div>
+	<table id="tableMyA" class="table table-stripped">
+	  <thead>
+	    <tr>
+	      <th>Question</th>
+	      <th>Time Elapsed</th>
+	      <th>Action</th>
+	      <th colspan="3">options</th>
+	    </tr>
+	  </thead>
 
-				  <tbody>
-					<% if @myUnasnweredQuestions.count > 0 %>
-						<% @myUnasnweredQuestions.each do |question| %>
-							<tr>
-								<td><%= question.question %></td>
-								<td><%= question.created_at %></td>
-								<td><a href="#answerQuestion" data-toggle="modal">answer</a></td>
-								<td><%= link_to 'Show', question, class: 'btn btn-mini btn-primary' %></td>
-								<td><%= link_to 'Edit', edit_faq_path(question), class: 'btn btn-mini btn-success' %></td>
-								<td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %></td>
-							</tr>
-						<% end %>
-					<%else%>
-						<tr>
-							<td colspan="7">all questions answered</td>
-						</tr>
-					<% end %>
-				  </tbody>
-				</table>
-			</div>
+	  <tbody>
+		<% if @myUnasnweredQuestions.count > 0 %>
+			<% @myUnasnweredQuestions.each do |question| %>
+				<tr>
+					<td><%= question.question %></td>
+					<td><%= question.created_at %></td>
+					<td><a href="#answerQuestion" data-toggle="modal">answer</a></td>
+					<td><%= link_to 'Show', question, class: 'btn btn-mini btn-primary' %></td>
+					<td><%= link_to 'Edit', edit_faq_path(question), class: 'btn btn-mini btn-success' %></td>
+					<td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %></td>
+				</tr>
+			<% end %>
+		<%else%>
+			<tr>
+				<td colspan="7">all questions answered</td>
+			</tr>
+		<% end %>
+	  </tbody>
+	</table>
+</div>
