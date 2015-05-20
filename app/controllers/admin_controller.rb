@@ -4,5 +4,6 @@ class AdminController < ApplicationController
 	@myRecentBlogs = Blog.all.limit(5)
 	@faqs = Faq.all
 	@myUnasnweredQuestions = Faq.all.where( answer: "")
+	@selectedUnasweredQuestion
   end
 end

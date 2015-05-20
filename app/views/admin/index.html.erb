@@ -52,7 +52,7 @@
 	  <thead>
 	    <tr>
 	      <th>Question</th>
-	      <th>Tile Elapsed</th>
+	      <th>Time Elapsed</th>
 	      <th>Action</th>
 	      <th colspan="3">options</th>
 	    </tr>
@@ -61,15 +61,15 @@
 	  <tbody>
 		<% if @myUnasnweredQuestions.count > 0 %>
 			<% @myUnasnweredQuestions.each do |question| %>
-		      <tr>
-		        <td><%= question.question %></td>
-		        <td><%= question.answer %></td>
-		        <td>answer question</td>
-		        <td><%= link_to 'Show', question %></td>
-		        <td><%= link_to 'Edit', edit_faq_path(question) %></td>
-		        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		      </tr>
-		    <% end %>
+				<tr>
+					<td><%= question.question %></td>
+					<td><%= question.created_at %></td>
+					<td><a id="<%=question%>" href="#answerQuestion" data-toggle="modal">answer</a></td>
+					<td><%= link_to 'Show', question, class: 'btn btn-mini' %></td>
+					<td><%= link_to 'Edit', edit_faq_path(question), class: 'btn btn-mini btn-success' %></td>
+					<td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %></td>
+				</tr>
+			<% end %>
 		<%else%>
 			<tr>
 				<td colspan="7">all questions answered</td>
@@ -79,3 +79,24 @@
 	</table>
 </div>
 
+<div class="modal fade" id="answerQuestion" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4>Answer Question</h4>
+			</div>
+			<div class="modal-body">
+				<h5>Question:</h5>
+					<p><%= %></p>
+				<h5>Enter Answer:</h5>
+				  <div class="input-group col-lg-3">
+				  	<ipnut type="text" class="form-control" placeholder="answer here">
+				  </div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn" data-dismiss="modal">cancel</a>
+				<a class="btn btn-primary" data-dismiss="modal">save</a>
+			</div>
+		</div>
+	</div>
+</div>
