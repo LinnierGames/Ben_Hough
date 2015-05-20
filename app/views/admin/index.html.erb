@@ -9,7 +9,7 @@
 </style>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3><a href="blogs/index.html">My Most Recent Blogs</a></h3>
+		<h3><%= link_to 'My Recent Blogs', blogs_path %></h3>
 	</div>
 	<table id="tableMyRecentBlogs" class="table table-stripped">
 	  <thead>
@@ -30,9 +30,9 @@
 		        <td><%= "body" %></td>
 		        <td>0</td>
 		        <td>zero</td>
-		        <td><%= link_to 'Show', blog %></td>
-		        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-		        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		        <td><%= link_to 'Show', blog_path(blog), class: 'btn btn-mini btn-primary' %></td>
+		        <td><%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-mini btn-success' %></td>
+		        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %></td>
 		      </tr>
 		    <% end %>
 		<%else%>
@@ -46,7 +46,7 @@
 </div>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3><a href="blogs/index.html">My Unasnwered Questions</a></h3>
+		<h3><%= link_to 'My Unasnwered Questions', faqs_path %></h3>
 	</div>
 	<table id="tableMyA" class="table table-stripped">
 	  <thead>
@@ -64,8 +64,8 @@
 				<tr>
 					<td><%= question.question %></td>
 					<td><%= question.created_at %></td>
-					<td><a id="<%=question%>" href="#answerQuestion" data-toggle="modal">answer</a></td>
-					<td><%= link_to 'Show', question, class: 'btn btn-mini' %></td>
+					<td><a href="#answerQuestion" data-toggle="modal">answer</a></td>
+					<td><%= link_to 'Show', question, class: 'btn btn-mini btn-primary' %></td>
 					<td><%= link_to 'Edit', edit_faq_path(question), class: 'btn btn-mini btn-success' %></td>
 					<td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %></td>
 				</tr>
