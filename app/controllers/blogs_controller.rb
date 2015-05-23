@@ -5,20 +5,24 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    render :layout => "application-admin.html.erb"
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    render :layout => "application-admin.html.erb"
   end
 
   # GET /blogs/new
   def new
     @blog = Blog.new
+    render :layout => "application-admin.html.erb"
   end
 
   # GET /blogs/1/edit
   def edit
+    render :layout => "application-admin.html.erb"
   end
 
   # POST /blogs
@@ -71,4 +75,5 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit(:title, :body)
     end
+    
 end

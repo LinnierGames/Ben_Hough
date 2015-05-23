@@ -5,6 +5,7 @@ class BlogCommentsController < ApplicationController
   # GET /blog_comments.json
   def index
     @blog_comments = BlogComment.all
+    render :layout => "application-admin.html.erb"
   end
 
   # GET /blog_comments/1
