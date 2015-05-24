@@ -1,4 +1,4 @@
-class FaQsController < ApplicationController
+class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
 
   # GET /faqs
@@ -13,6 +13,7 @@ class FaQsController < ApplicationController
   end
 
   # GET /faqs/new
+
   def new
     @faq = Faq.new
   end
