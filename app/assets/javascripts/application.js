@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap/bootstrap
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
+
+console.log("ready");
